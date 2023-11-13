@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Pro 2</title>
+    <style>
+        input, button {
+            margin: 15px;
+            padding: 15px;
+            font-size: 30px;
+        }
+        button{
+            border-radius: 20%;
+            background-color: brown;
+        }
+        body{
+            background-color: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora Pro 2</h1>
+    <h2><p id="infoUsuario"></p></h2>
+    <input id="display" type="text" disabled><br>
+
+    <button onclick="addToDisplay('7')">7</button>
+    <button onclick="addToDisplay('8')">8</button>
+    <button onclick="addToDisplay('9')">9</button>
+    <button onclick="addOperator('+')">+</button><br>
+
+    <button onclick="addToDisplay('4')">4</button>
+    <button onclick="addToDisplay('5')">5</button>
+    <button onclick="addToDisplay('6')">6</button>
+    <button onclick="addOperator('-')">-</button><br>
+
+    <button onclick="addToDisplay('1')">1</button>
+    <button onclick="addToDisplay('2')">2</button>
+    <button onclick="addToDisplay('3')">3</button>
+    <button onclick="addOperator('*')">*</button><br>
+
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="addToDisplay('0')">0</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="addOperator('/')">/</button><br>
+
+    <script src="index.js"></script>
+</body>
+</html>
