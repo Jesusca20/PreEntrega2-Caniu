@@ -19,7 +19,6 @@
 </head>
 <body>
     <h1>Calculadora Pro 2</h1>
-    <h2><p id="infoUsuario"></p></h2>
     <input id="display" type="text" disabled><br>
 
     <button onclick="addToDisplay('7')">7</button>
@@ -42,6 +41,11 @@
     <button onclick="calculate()">=</button>
     <button onclick="addOperator('/')">/</button><br>
 
+    <h2>Historial</h2>
+    <ul id="history"></ul>
+    <p id="nombre"></p>
+
+    <!-- <h3 id="nombre"></h3> -->
     <script src="index.js"></script>
 </body>
 </html>

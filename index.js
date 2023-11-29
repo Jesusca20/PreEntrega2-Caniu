@@ -1,36 +1,43 @@
 let nombre = prompt("Ingrese su nombre:");
-let edad = prompt("Ingrese su edad:");
-
-let operaciones = ['suma', 'resta', 'multiplicación', 'división'];
-
-let usuario = {
-    nombre: nombre,
-    edad: edad,
-    operaciones: operaciones
-};
 
 
-let display = document.getElementById('display');
+let textoElement = document.getElementById("nombre");
+textoElement.textContent = "Calculos relizados por: " + nombre;
+
 let calculation = '';
-
+let history = document.getElementById('history');
+let display = document.getElementById('display');
 
 function addToDisplay(value) {
-    calculation += value;
-    display.value = calculation;
+calculation += value;
+display.value = calculation;
 }
 
 function addOperator(operator) {
-    calculation += ' ' + operator + ' ';
-    display.value = calculation;
+        calculation += ' ' + operator + ' ';
+        display.value = calculation;
+        }
+
+function calculate() {
+let result;
+try {
+    result = eval(calculation);
+    display.value = result;
+    saveToHistory(calculation + ' = ' + result);
+    calculation = ''; 
+} catch (error) {
+    display.value = 'Error';
+}
 }
 
 function clearDisplay() {
-    calculation = '';
-    display.value = '';
+calculation = '';
+display.value = '';
 }
 
-function calculate() {
-    const result = eval(calculation);
-    display.value = result;
-    calculation = result.toString();
+function saveToHistory(entry) {
+const listItem = document.createElement('li');
+const textNode = document.createTextNode(entry);
+listItem.appendChild(textNode);
+history.appendChild(listItem);
 }
